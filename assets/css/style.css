@@ -206,6 +206,8 @@ h2 {
   margin: 28px 0 0;
   color: var(--color-muted);
   font-size: clamp(1rem, 1.35vw, 1.14rem);
+  text-align: justify;
+  text-align-last: left;
 }
 
 .hero-actions {
@@ -413,8 +415,13 @@ h2 {
   text-align: center;
 }
 
+.closing-inner h2 {
+  text-align: left;
+}
+
 .closing-inner p {
   margin-top: 20px;
+  text-align: left;
 }
 
 .contact-layout p {
