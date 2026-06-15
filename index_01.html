@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="華光寺 Huah Kwang Temple 位於印度舍衛城，鄰近祇樹給孤獨園，是一座正在因緣中逐步整建與恢復的漢傳佛教道場。"
+    >
+    <title>華光寺 Huah Kwang Temple｜Hero 輪播版本</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+      .hero-photo-rotator {
+        overflow: hidden;
+      }
+
+      .hero-photo-rotator .hero-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4 / 5.42;
+        overflow: hidden;
+        border-radius: 4px;
+        background: var(--color-stone);
+      }
+
+      .hero-photo-rotator .hero-frame img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0;
+        transition: opacity 3000ms ease;
+      }
+
+      .hero-photo-rotator .hero-frame img.is-active {
+        opacity: 1;
+      }
+
+      .hero-photo-rotator .hero-frame img:first-child {
+        object-position: center;
+        filter: sepia(0.12) saturate(0.88) contrast(0.96);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-photo-rotator .hero-frame img {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      設計假設：
+      - 方向採「清淨道場型」：正式、安定、留白充足，不做商業 landing page。
+      - 內容以已存在的華光寺家族網站為主入口，不新增未經支持的宗教或歷史宣稱。
+      - 視覺參考法鼓山資訊型首頁的穩定調性，但不用大型行銷式 hero。
+    -->
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="回到華光寺首頁">
+        <img src="assets/icons/huahkwang-logo-full.png" alt="華光寺">
+        <span>Huah Kwang Temple</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">開啟導覽選單</span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="主要導覽">
+        <a href="#guide">華光導覽</a>
+        <a href="#pilgrimage">聖地朝禮</a>
+        <a href="#contact">交通與聯絡</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-band" aria-labelledby="hero-title">
+        <div class="hero-pattern" aria-hidden="true"></div>
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">印度舍衛城．祇樹給孤獨園附近</p>
+            <h1 id="hero-title">華光寺<br><span>一座在聖地因緣中安住的清淨道場</span></h1>
+            <p class="hero-text">
+              華光寺 Huah Kwang Temple 位於印度舍衛城，鄰近佛陀長年說法的祇樹給孤獨園。這裡承載著佛教聖地的因緣，也在樸素、穩定而長遠的努力中，逐步恢復道場的安住、禮佛、學習與接引功能。
+            </p>
+            <div class="hero-actions" aria-label="主要入口">
+              <a class="button button-primary" href="#guide">進入華光導覽</a>
+              <a class="button button-secondary" href="#pilgrimage">聖地朝禮</a>
+            </div>
+          </div>
+
+          <figure class="hero-photo hero-photo-rotator" data-hero-rotator>
+            <div class="hero-frame">
+              <img class="is-active" src="assets/images/hero-rotator/huahkwang-tower-archive.png" alt="華光寺塔樓黑白舊照">
+              <img src="assets/images/hero-rotator/shravasti-01.jpeg" alt="舍衛城聖地照片之一">
+              <img src="assets/images/hero-rotator/shravasti-03.jpeg" alt="舍衛城聖地照片之二">
+              <img src="assets/images/hero-rotator/ananda-bodhi-tree.jpeg" alt="阿難菩提樹">
+              <img src="assets/images/hero-rotator/gandhakuti-distance.jpeg" alt="香室遠照">
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section section-band guide" id="guide" aria-labelledby="guide-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker">華光導覽</p>
+            <h2 id="guide-title">從首頁進入各個主題頁</h2>
+          </div>
+
+          <div class="guide-list">
+            <a class="guide-item" href="https://walterintw.github.io/huahkwang-history-site/">
+              <span class="guide-number">01</span>
+              <span>
+                <strong>歷史沿革</strong>
+                <small>認識華光寺的歷史背景、創寺法師與籌建過程。</small>
+              </span>
+            </a>
+
+            <a class="guide-item" href="https://walterintw.github.io/huahkwang-today/">
+              <span class="guide-number">02</span>
+              <span>
+                <strong>現在的華光寺</strong>
+                <small>了解道場目前逐步恢復安住、禮佛、共修與朝聖接引的狀態。</small>
+              </span>
+            </a>
+
+            <a class="guide-item" href="https://walterintw.github.io/huahkwang-vision-page/">
+              <span class="guide-number">03</span>
+              <span>
+                <strong>華光寺願景</strong>
+                <small>從弘法、教育、慈善與長遠護持，理解華光寺未來方向。</small>
+              </span>
+            </a>
+
+            <a class="guide-item" href="https://walterintw.github.io/huahkwang-sacred-sites/">
+              <span class="guide-number">04</span>
+              <span>
+                <strong>印度佛教八大聖地</strong>
+                <small>循著佛陀一生重要足跡，理解朝禮聖地的意義。</small>
+              </span>
+            </a>
+
+            <a class="guide-item" href="#contact">
+              <span class="guide-number">05</span>
+              <span>
+                <strong>交通與聯絡</strong>
+                <small>提供參訪、交通與留言聯絡的入口，後續可依正式資料更新。</small>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section pilgrimage" id="pilgrimage" aria-labelledby="pilgrimage-title">
+        <div class="container pilgrimage-layout">
+          <div class="pilgrimage-copy">
+            <p class="section-kicker">聖地朝禮</p>
+            <h2 id="pilgrimage-title">從舍衛城，走近佛陀在人間行化的足跡</h2>
+            <p>
+              對遠道而來的佛弟子而言，朝禮聖地不只是觀看遺跡，也是在佛陀曾經行化、說法、教化的土地上，重新提起學佛初心。華光寺位於舍衛城，與祇樹給孤獨園因緣相近，因此也自然成為認識印度佛教聖地的一處入口。
+            </p>
+            <a class="text-link" href="https://walterintw.github.io/huahkwang-sacred-sites/">閱讀八大聖地介紹</a>
+          </div>
+
+          <ol class="site-list" aria-label="印度佛教八大聖地">
+            <li><span>藍毗尼園</span><small>佛陀誕生</small></li>
+            <li><span>菩提伽耶</span><small>佛陀成道</small></li>
+            <li><span>鹿野苑</span><small>初轉法輪</small></li>
+            <li><span>王舍城與靈鷲山</span><small>早期弘法與僧團形成</small></li>
+            <li><span>舍衛城與祇樹給孤獨園</span><small>長年說法</small></li>
+            <li><span>僧伽施</span><small>佛陀自忉利天下降</small></li>
+            <li><span>毘舍離</span><small>重要教化因緣</small></li>
+            <li><span>拘尸那羅</span><small>佛陀涅槃</small></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section closing section-band" aria-labelledby="closing-title">
+        <div class="container closing-inner">
+          <p class="section-kicker">長遠願行</p>
+          <h2 id="closing-title">願這座聖地道場，成為更多人親近佛法的因緣。</h2>
+          <p>
+            華光寺的恢復，是一段需要時間慢慢成就的願行。願我們在清淨、穩定、平實的步伐中，讓這座位於佛陀聖地旁的道場，逐步成為僧眾安住、信眾朝禮、青年學習、當地民眾受益，也讓現代佛子親近聖地、學習佛法、安住身心的一處因緣。
+          </p>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-layout">
+          <div>
+            <p class="section-kicker">交通與聯絡</p>
+            <h2 id="contact-title">聯絡華光寺</h2>
+            <p>
+              若您想進一步了解華光寺、參訪或有其他問題，歡迎留下訊息。寺方將於方便時回覆。正式交通資訊可於資料確認後在此補充。
+            </p>
+          </div>
+
+          <form class="contact-form" action="https://formsubmit.co/trynwli@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="華光寺網站留言">
+            <input type="hidden" name="_captcha" value="false">
+            <label>
+              <span>姓名</span>
+              <input type="text" name="name" autocomplete="name" required>
+            </label>
+            <label>
+              <span>電子信箱</span>
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <label>
+              <span>留言內容</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button class="button button-primary" type="submit">送出留言</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>華光寺 Huah Kwang Temple</strong>
+          <p>印度舍衛城．祇樹給孤獨園旁</p>
+        </div>
+        <nav aria-label="頁尾導覽">
+          <a href="#guide">華光導覽</a>
+          <a href="#pilgrimage">聖地朝禮</a>
+          <a href="#contact">交通與聯絡</a>
+        </nav>
+        <p class="copyright">© Huah Kwang Temple. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+      const heroRotator = document.querySelector("[data-hero-rotator]");
+
+      if (heroRotator && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const slides = Array.from(heroRotator.querySelectorAll(".hero-frame img"));
+        let activeSlide = 0;
+        const fadeDuration = 3000;
+        const holdDuration = 9000;
+
+        const showNextSlide = () => {
+          slides[activeSlide].classList.remove("is-active");
+          activeSlide = (activeSlide + 1) % slides.length;
+          slides[activeSlide].classList.add("is-active");
+          window.setTimeout(showNextSlide, fadeDuration + holdDuration);
+        };
+
+        window.setTimeout(showNextSlide, fadeDuration + holdDuration);
+      }
+    </script>
+  </body>
+</html>
