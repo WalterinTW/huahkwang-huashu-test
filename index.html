@@ -9,6 +9,46 @@
     >
     <title>華光寺 Huah Kwang Temple｜印度舍衛城佛教道場</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+      .hero-photo-rotator {
+        overflow: hidden;
+      }
+
+      .hero-photo-rotator .hero-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4 / 5.42;
+        overflow: hidden;
+        border-radius: 4px;
+        background: var(--color-stone);
+      }
+
+      .hero-photo-rotator .hero-frame img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0;
+        transition: opacity 3000ms ease;
+      }
+
+      .hero-photo-rotator .hero-frame img.is-active {
+        opacity: 1;
+      }
+
+      .hero-photo-rotator .hero-frame img:first-child {
+        object-position: center;
+        filter: sepia(0.12) saturate(0.88) contrast(0.96);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-photo-rotator .hero-frame img {
+          transition: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <!--
@@ -31,7 +71,6 @@
       </button>
 
       <nav class="site-nav" id="site-nav" aria-label="主要導覽">
-        <a href="#about">關於華光寺</a>
         <a href="#guide">華光導覽</a>
         <a href="#pilgrimage">聖地朝禮</a>
         <a href="#contact">交通與聯絡</a>
@@ -54,27 +93,15 @@
             </div>
           </div>
 
-          <figure class="hero-photo">
-            <img src="assets/images/huahkwang-tower-archive.png" alt="華光寺塔樓黑白舊照">
-            <figcaption>華光寺塔樓舊照</figcaption>
+          <figure class="hero-photo hero-photo-rotator" data-hero-rotator>
+            <div class="hero-frame">
+              <img class="is-active" src="assets/images/hero-rotator/huahkwang-tower-archive.png" alt="華光寺塔樓黑白舊照">
+              <img src="assets/images/hero-rotator/shravasti-01.jpeg" alt="舍衛城聖地照片之一">
+              <img src="assets/images/hero-rotator/shravasti-03.jpeg" alt="舍衛城聖地照片之二">
+              <img src="assets/images/hero-rotator/ananda-bodhi-tree.jpeg" alt="阿難菩提樹">
+              <img src="assets/images/hero-rotator/gandhakuti-distance.jpeg" alt="香室遠照">
+            </div>
           </figure>
-        </div>
-      </section>
-
-      <section class="section intro" id="about" aria-labelledby="about-title">
-        <div class="container intro-layout">
-          <div>
-            <p class="section-kicker">清淨道場</p>
-            <h2 id="about-title">以莊重、低調、安定的方式，介紹華光寺的因緣</h2>
-          </div>
-          <div class="prose">
-            <p>
-              本網站作為華光寺家族網站的入口，整理歷史沿革、現況、願景、印度佛教八大聖地與聯絡資訊。頁面以簡明而克制的方式呈現，避免過度包裝，讓讀者能安靜地理解道場的背景與目前進展。
-            </p>
-            <p>
-              未來若有更多正式資料、照片或參訪資訊，可在同一套視覺語言下逐步補充，使各個獨立頁面仍維持一致的寺院文化網站氣質。
-            </p>
-          </div>
         </div>
       </section>
 
@@ -201,7 +228,6 @@
           <p>印度舍衛城．祇樹給孤獨園旁</p>
         </div>
         <nav aria-label="頁尾導覽">
-          <a href="#about">關於華光寺</a>
           <a href="#guide">華光導覽</a>
           <a href="#pilgrimage">聖地朝禮</a>
           <a href="#contact">交通與聯絡</a>
@@ -211,5 +237,24 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script>
+      const heroRotator = document.querySelector("[data-hero-rotator]");
+
+      if (heroRotator && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const slides = Array.from(heroRotator.querySelectorAll(".hero-frame img"));
+        let activeSlide = 0;
+        const fadeDuration = 3000;
+        const holdDuration = 9000;
+
+        const showNextSlide = () => {
+          slides[activeSlide].classList.remove("is-active");
+          activeSlide = (activeSlide + 1) % slides.length;
+          slides[activeSlide].classList.add("is-active");
+          window.setTimeout(showNextSlide, fadeDuration + holdDuration);
+        };
+
+        window.setTimeout(showNextSlide, fadeDuration + holdDuration);
+      }
+    </script>
   </body>
 </html>
